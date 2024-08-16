@@ -248,6 +248,22 @@ main {
 }
 
 @media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .profile-section img {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add space between the image and the text */
+        width: 120px; /* Reduce the image size for smaller screens */
+    }
+
+    .profile-section h1 {
+        font-size: 2rem; /* Adjust font size to fit mobile screens */
+    }
+    
     .profile-image img {
         margin-left: 0;
         margin-top: 80px;
