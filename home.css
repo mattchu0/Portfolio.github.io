@@ -263,7 +263,7 @@ main {
     .profile-section h1 {
         font-size: 2rem; /* Adjust font size to fit mobile screens */
     }
-    
+
     .profile-image img {
         margin-left: 0;
         margin-top: 80px;
@@ -718,11 +718,19 @@ main {
 
 /* Connect with me section */
 .connect-section {
-    padding: 80px 0;
+    position: relative;
+    overflow-x: hidden; /* Hide any potential horizontal overflow */
+    padding: 50px 20px;
     background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #00bfff);
     background-size: 400% 400%;
     animation: gradientBackground 5s ease infinite;
     color: #fff;
+}
+
+/* Make sure all child elements are contained */
+.connect-section .container {
+    max-width: 100%; /* Ensure the container doesn't exceed 100% width */
+    padding: 0 15px; /* Add padding to prevent content from touching the screen edges */
 }
 
 @keyframes gradientBackground {
@@ -816,6 +824,22 @@ main {
     .social-media .social-link {
         font-size: 1.25rem;
     }
+}
+
+.connect-section .container {
+    padding: 0 10px; /* Further reduce padding if necessary */
+}
+
+.connect-section {
+    padding: 50px 10px; /* Ensure the section padding fits within the mobile view */
+}
+
+/* Additional CSS rules to ensure proper sizing */
+.connect-section::before,
+.connect-section::after {
+max-width: 100%; /* Ensure pseudo-elements do not exceed the section's width */
+left: 0; /* Reset position to avoid overflow */
+right: 0; /* Ensure elements stay within bounds */
 }
 
 /*Footer Section*/
