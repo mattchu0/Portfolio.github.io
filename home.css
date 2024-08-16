@@ -725,12 +725,14 @@ main {
     background-size: 400% 400%;
     animation: gradientBackground 5s ease infinite;
     color: #fff;
+    overflow: hidden;
 }
 
 /* Make sure all child elements are contained */
 .connect-section .container {
     max-width: 100%; /* Ensure the container doesn't exceed 100% width */
     padding: 0 15px; /* Add padding to prevent content from touching the screen edges */
+    overflow: hidden;
 }
 
 @keyframes gradientBackground {
@@ -755,6 +757,9 @@ main {
     border-radius: 50%;
     filter: blur(100px);
     animation: float 6s ease-in-out infinite;
+    top: -50px; /* Adjust positioning to prevent overflow */
+    left: -50px;
+    right: auto; /* Prevent overflow on the right side */
 }
 
 .connect-section::before {
@@ -763,7 +768,9 @@ main {
 }
 
 .connect-section::after {
-    bottom: -50px;
+    top: auto;
+    bottom: -50px; /* Adjust positioning */
+    left: auto;
     right: -50px;
 }
 
@@ -837,9 +844,11 @@ main {
 /* Additional CSS rules to ensure proper sizing */
 .connect-section::before,
 .connect-section::after {
-max-width: 100%; /* Ensure pseudo-elements do not exceed the section's width */
-left: 0; /* Reset position to avoid overflow */
-right: 0; /* Ensure elements stay within bounds */
+        max-width: 100%; /* Ensure pseudo-elements do not exceed the section's width */
+        left: 0; /* Reset position to avoid overflow */
+        right: 0; /* Ensure elements stay within bounds */
+        width: 150px; /* Reduce size on mobile to prevent overflow */
+        height: 150px;
 }
 
 /*Footer Section*/
